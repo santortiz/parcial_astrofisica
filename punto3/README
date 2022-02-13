@@ -1,0 +1,11 @@
+Para compilar y ejecutar el código 'matrices.c':
+1. Abra la terminal y ubíquese en el directorio donde se encuentra el archivo 'matrices.c'
+2. Ejecute el siguiente comando para compilar: 
+
+    gcc matrices.c -o matrices.out
+
+3. Ejecute el siguiente comando para correr:
+
+    ./matrices.out
+
+4. Siga las intrucciones del código.
