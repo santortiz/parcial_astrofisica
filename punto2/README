@@ -1,3 +1,6 @@
+(SE ADJUNTA INFORME DE LOS RESULTADOS OBTENIDOS EN PDF)
+
+
 1. Respecto a la ejecución del script con el leapfrog:
 
 Como condiciones iniciales del tiro parabólico se pusieron las mismas que las vistas en clase. Al correr el código 'leapfrog.c', se pide como entrada el número de pasos para la integración y la rutina devuelve un archivo con el nombre 'leapfrog ' + (numero de pasos) + '.dat' que contiene el valor de las x en la columna 2 y el valor de las y en la columna 3.
