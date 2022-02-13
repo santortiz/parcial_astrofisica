@@ -8,4 +8,8 @@ set title "Tiro parabolico"
 set xlabel "x"
 set ylabel "y"
 
-plot "parabolico20.dat" u 2:3 w l lc 'red' title '20 clase', "parabolico100.dat" u 2:3 w l lc 'blue' title '100', "parabolico1e6.dat" u 2:3 w l lc 'black' title '1e6', "leapfrog20.dat" u 2:3 w l lc 'red' dt 5 title '20 leapfrog', "leapfrog100.dat" u 2:3 w l lc 'blue' dt 5 title '100', "leapfrog1000000.dat" u 2:3 w l lc 'black' dt 5 title '1e6'
+
+plot "parabolico20.dat" u 2:3 w l lc 'red' title '20 clase', "leapfrog20.dat" u 2:3 w l lc 'red' dt 5 title '20 leapfrog'
+#plot "parabolico100.dat" u 2:3 w l lc 'red' title '100 clase', "leapfrog100.dat" u 2:3 w l lc 'red' dt 5 title '100 leapfrog'
+#plot "parabolico1e6.dat" u 2:3 w l lc 'red' title '1e6 clase', "leapfrog1000000.dat" u 2:3 w l lc 'red' dt 5 title '1e6 leapfrog'
+#plot "parabolico1e6.dat" u 2:3 w l lc 'red' title '1e6 clase', "leapfrog20.dat" u 2:3 w l lc 'red' dt 5 title '20 leapfrog'
