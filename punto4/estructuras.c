@@ -9,30 +9,41 @@ struct random{
     };
     
 typedef struct random Random;
-typedef Random *pointerRandom; 
+typedef Random *randomPointer;
 
 
 int choose();
-void createNewNodo();
+randomPointer createNewNodo();
 int walk();
 
 
 int main(){
-
+    
+    
     Random nodo;
     nodo.step= choose();
+    
+    Random *address, *tempAddress;
+    address= &nodo;
 
-    int sum, lim;
+    int steps, sum, lim;
+    steps=0;
+    sum=0;
+    lim= 2;
 
-    sum = walk(&nodo);
+    while (sum!=lim){
+        
+        tempAddress= createNewNodo(address);
 
-    printf("%d", sum);
+        address = tempAddress;
+        sum = walk(address);
+        steps+=1;
+    }
 
+    printf("steps: %d \n", steps);
+    
     return 0;
 };
-
-
-//choose() devuelve aleatoriamente -1 o 1.
 
 int choose(){
 
@@ -45,43 +56,36 @@ int choose(){
     return choices[rand()%2];
 };
 
-void createNewNodo(pointerRandom *pointer){
+randomPointer createNewNodo(Random  *pointer){
 
-    pointerRandom newPointer;
-    pointerRandom previousPointer;
-    pointerRandom currentPointer;
+    Random *newPointer;
 
 
-    newPointer = malloc(sizeof(Random));
+    newPointer=malloc(sizeof(Random));
 
     if (newPointer != NULL){
-        newPointer-> step = choose();
-        newPointer->pointer = NULL;
+        newPointer->step = choose();
+        newPointer->pointer = pointer;
 
-        previousPointer = NULL;
-        currentPointer = *pointer;
+        pointer->pointer=NULL;
 
-        if (previousPointer == NULL){
-            newPointer->pointer= *pointer;
-            *pointer = newPointer;
-
-        } else{
-            previousPointer->pointer = newPointer;
-            newPointer->pointer= currentPointer;
-        };
     } else {
 
         printf("No hay memoria disponible");
     };
+    return newPointer;
 };
 
-int walk(pointerRandom currentPointer){
+int walk(Random *currentPointer){
     
     int sum;
-    sum= 0;
 
-    while (currentPointer!= NULL){
-        sum+= currentPointer->step;
+    sum=0;
+
+    while (currentPointer!=NULL){
+
+        sum += currentPointer->step;
+        currentPointer = currentPointer->pointer;
     };
 
     return sum;

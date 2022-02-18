@@ -1,0 +1,22 @@
+Random walk con una lista ligada en c:
+
+Se busca contar cuántos pasos se dieron antes de alcanzar un desplazamiento neto dado. Por cómo se plantea la random walk se pueden dar pasos hacia la derecha o izquierda del cero ({-1,1}).
+
+El código "estructuras.c" tiene varias funciones:
+- choose(): elige en qué dirección dar el paso de manera aleatoria.
+- createNewNodo(): crea una nueva estructura de tipo "random" (definida dentro del código) que contiene el valor del step y un pointer hacia otra estructura (estructura autoreferenciada).
+-walk(): suma los steps (vectorialmente) y calcula cuál ha sido el desplazamiento neto.
+
+La implementación del código arroja cuántos pasos se dieron antes de alcanzar un desplazamiento neto igual a 2 (decisión arbitraria, pudo haber sido cualquier otro valor).
+
+PARA COMPILAR Y EJECUTAR:
+
+1. Abra la terminal y ubíquese en el directorio donde se encuentra el archivo "estructuras.c".
+2. Ejecute el siguiente comando para compilar:
+
+    gcc estructuras.c -o estructuras.out
+
+3. Ejecute el siguiente comando para correr el código:
+
+    ./estructuras.out 
+
